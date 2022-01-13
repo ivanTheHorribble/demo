@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="../assets/css/pass.css" />
+  </head>
+  <body style="background-image:url('../assets/images/pass-bg.jpg');background-position: center;background-repeat: no-repeat; background-size: cover; color: #fff;">
+    <div class="wrapper" id="app">
+      <div class="card-form">
+        <div class="card-list">
+          <div class="card-item" v-bind:class="{ '-active' : isCardFlipped }" >
+            <div class="card-item__side -front" >
+              <div class="card-item__focus" v-bind:class="{'-active' : focusElementStyle }" v-bind:style="focusElementStyle" ref="focusElement"></div>
+              <div class="card-item__cover" style="background-image: url('../assets/images/index.webp'); background-size: 100%;">
+               <img src="../assets/images/barcode.jpg" style="opacity: 0;width: 100%; height: 100%;" alt="">
+              </div>
+              
+              <div class="card-item__wrapper">
+               
+                <div class="card-item__top" style="text-align: center;">
+          <span style=" font-family: Ancient; font-size: 150%;padding-left: 35%; opacity: 0.5;" > VELYRIA STATE
+          </span>
+
+                  
+                 
+                 
+                </div>
+               
+            
+                 
+                  
+                    <div style="height: 100%;  text-transform: uppercase; padding-top: 35% ; text-align: center;">
+                      <span id="nameOut" style="font-family: Money;color: #fff;font-size: 30px;opacity:0.5;">CITIZN NAME</span>
+                   </div>
+                  
+                  
+                    
+                   
+                  
+              
+              </div>
+            </div>
+           
+            </div>
+          </div>
+        </div>
+        <div class="card-form__inner">
+          <div class="card-input">
+            <div class="dropdown">
+            <label for="cardNumber" class="card-input__label" style="display: inline-flex">Name of the citizin &nbsp;
+             <i class="fas fa-info-circle"></i>
+            <p class="dropdown-content">This is what the your name will be in VELYRIA STATE. it can only contain alphabtic characters, unupropraite names are not allowed</p>
+            </div>
+            </label>
+            <input type="text" id="name" class="card-input__input" v-mask="generateCardNumberMask" v-model="cardNumber" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardNumber" autocomplete="off" oninput="namer()" minlength="4" maxlength="20">
+          </div>
+          <div class="card-input">
+            <div class="dropdown">
+            <label for="cardName" class="card-input__label">Velyria Wallet addess
+              <i class="fas fa-info-circle"></i>
+                <p class="dropdown-content">Your Wallet address well be associated with your Citizenship profile, its alls goin to be the billing wallet for the citizn minting</p>
+                </div>
+            </label>
+           
+            <input type="text" id="cardName" class="card-input__input" v-model="cardName" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardName" autocomplete="off">
+          </div>
+         <div style="text-align: center;">
+           <span>Velyria Citizen cost:</span>
+           <span style="color: #bbff55;">150 VEL</span>
+           <br>
+           <span>  Dont have VELYRIAN COIN?"<a style="color: #bbff55;" href="../buy.html">BUY NOW</a></span>
+         
+
+         </div>
+         
+            
+  
+          <button class="card-form__button" style="color: black; font-size:30px; letter-spacing: 3px;">
+            GET CITIZNSHIP
+          </button>
+        </div>
+      </div>
+      
+     
+    </div>
+    <script src="../assets/js/pass.js"></script>
+  </body>
+</html>
